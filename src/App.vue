@@ -30,25 +30,25 @@ export default {
   },
   methods:{
     async getTodo(){
-      const resData =await axios.get("https://pure-lowlands-14273.herokuapp.com/api/word/");
+      const resData =await axios.get("https://still-caverns-55692.herokuapp.com/api/word/");
       this.todolist = resData.data.data;
     },
     async insertTodo(){
       const sendData = {
         todo:this.newtodo,
       };
-      await axios.post("https://pure-lowlands-14273.herokuapp.com/api/word/",sendData);
+      await axios.post("https://still-caverns-55692.herokuapp.com/api/word/",sendData);
       await this.getTodo();
     },
     async updateTodo(id,todo){
       const sendData={
         todo:todo,
       };
-      await axios.put("https://pure-lowlands-14273.herokuapp.com/api/word/" + id,sendData);
+      await axios.put("https://still-caverns-55692.herokuapp.com/api/word/" + id,sendData);
       await this.getTodo();
     },
     async deleteTodo(id){
-      await axios.delete("https://pure-lowlands-14273.herokuapp.com/api/word/" + id);
+      await axios.delete("https://still-caverns-55692.herokuapp.com/api/word/" + id);
     },
   },
   created(){
